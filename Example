@@ -1,0 +1,10 @@
+from pyspark.sql.types import *
+
+schema = StructType([
+  StructField("feature",StringType()),
+  StructField("perc_cont", FloatType()),
+  StructField("key", StringType())
+])
+
+
+final_grouped_shap = distContribution(sc, dfs, model.feature_names, model)
